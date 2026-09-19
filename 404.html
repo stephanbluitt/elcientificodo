@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Página no encontrada — El Científico</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14100b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#14100b;--ambar:#e98a3c;--melocoton:#f0cda6;--crema:#f8f2e6;
+  --linea:rgba(240,205,166,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Instrument Sans',system-ui,sans-serif;
+  background:var(--negro);color:var(--melocoton);line-height:1.6;
+  min-height:100svh;display:grid;place-content:center;justify-items:start;
+  padding:clamp(24px,6vw,64px);gap:6px;
+}
+.eyebrow{
+  font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em;
+  color:var(--ambar);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';width:34px;height:1px;background:var(--ambar);opacity:.7}
+h1{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;
+  font-size:clamp(3.4rem,16vw,9rem);line-height:.92;letter-spacing:-.03em;
+  color:var(--crema);margin-block:10px 4px;
+}
+h1 span{color:var(--ambar)}
+p{max-width:44ch;font-size:1.02rem}
+.italica{font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--crema)}
+a.btn{
+  display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+  padding:13px 25px;border-radius:999px;text-decoration:none;font-weight:600;
+  background:var(--ambar);color:var(--negro);
+  transition:transform .2s cubic-bezier(.2,.7,.2,1),background .2s;
+}
+a.btn:hover{transform:translateY(-2px);background:#f6ab68}
+a.btn svg{width:18px;height:18px;fill:currentColor}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <p class="eyebrow">Error 404</p>
+  <h1>Nota <span>perdida</span></h1>
+  <p>Esta página no existe — o se me fue del <span class="italica">laboratorio</span>. Vuelve al inicio y sigue escuchando.</p>
+  <a class="btn" href="/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    Volver al inicio
+  </a>
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>El Científico — R&amp;B · Soul · Pop Rock</title>
+<meta name="description" content="El Científico — artista y productor dominicano en Nueva York. R&B, soul y pop rock. Escucha su música en Spotify y Apple Music.">
+<meta name="theme-color" content="#14100b">
+<link rel="canonical" href="https://elcientificodo.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El Científico">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="El Científico">
+<meta property="og:description" content="R&B · Soul · Pop Rock — música para días felices y noches tristes.">
+<meta property="og:image" content="https://elcientificodo.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El Científico en vivo con su banda">
+<meta property="og:url" content="https://elcientificodo.com/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "El Científico",
+  "url": "https://elcientificodo.com/",
+  "image": "https://elcientificodo.com/img/og.jpg",
+  "description": "Artista y productor dominicano radicado en Nueva York. R&B, soul y pop rock.",
+  "genre": ["R&B", "Soul", "Pop Rock"],
+  "foundingLocation": { "@type": "Place", "name": "Nueva York, NY" },
+  "sameAs": [
+    "https://open.spotify.com/artist/75YcF0LInIr3efnp6hydDy",
+    "https://music.apple.com/us/artist/el-cient%C3%ADfico/1500430741",
+    "https://www.instagram.com/elcientificodo/",
+    "https://www.youtube.com/@elcientificodo",
+    "https://www.tiktok.com/@elcientifico.do"
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+<link rel="preload" as="image" href="img/hero-escenario.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============
+   Identidad fija y oscura: un solo mundo visual, pintado explícitamente. */
+:root{
+  --negro:#14100b;
+  --negro-2:#1d1710;
+  --negro-3:#282017;
+  --ambar:#e98a3c;
+  --ambar-claro:#f6ab68;
+  --vino:#8c2f2b;
+  --melocoton:#f0cda6;
+  --crema:#f8f2e6;
+  --tinta:#221a11;
+  --linea:rgba(240,205,166,.18);
+  --max:1200px;
+  --radio:16px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Instrument Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  background:var(--negro);
+  color:var(--melocoton);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* height:auto es obligatorio: sin él, un <img> con atributos width/height
+   conserva la altura fija y se deforma al encogerse el ancho. */
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+/* El atributo `hidden` no aplica a SVG (otro namespace): hay que forzarlo. */
+svg[hidden]{display:none}
+::selection{background:var(--ambar);color:var(--negro)}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px;border-radius:4px}
+
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:.96;letter-spacing:-.025em;text-wrap:balance}
+.italica{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;letter-spacing:0}
+
+/* ============ BARRA DE PROGRESO ============ */
+.progreso{
+  position:fixed;top:0;left:0;height:2px;width:100%;z-index:120;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--vino),var(--ambar));
+}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(18px,4vw,48px);
+  padding-top:calc(16px + env(safe-area-inset-top,0px));
+  background:linear-gradient(rgba(20,16,11,.8),rgba(20,16,11,0));
+  transition:background .35s var(--ease),backdrop-filter .35s var(--ease);
+}
+nav.solido{background:rgba(20,16,11,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.logo{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;
+  font-size:1rem;text-transform:uppercase;letter-spacing:.15em;
+  text-decoration:none;color:var(--crema);z-index:110;
+}
+.logo span{color:var(--ambar)}
+.nav-links{display:flex;gap:clamp(14px,2.6vw,34px);list-style:none;align-items:center}
+.nav-links a{
+  text-decoration:none;font-size:.78rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.13em;color:var(--melocoton);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--ambar)}
+.nav-cta{border:1px solid var(--ambar);border-radius:999px;padding:8px 18px;color:var(--ambar)!important;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--ambar);color:var(--negro)!important}
+.burger{display:none;padding:8px;z-index:110}
+.burger i{display:block;width:26px;height:2px;background:var(--crema);margin:6px 0;transition:transform .3s var(--ease),opacity .2s}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:88svh;isolation:isolate;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:120px clamp(18px,4vw,48px) clamp(36px,6vh,72px);
+  overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;background:var(--negro-2)}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;object-position:center 46%;
+  animation:deriva 26s ease-in-out infinite alternate;
+}
+@keyframes deriva{from{transform:scale(1.04)}to{transform:scale(1.13) translateY(-1.2%)}}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(20,16,11,.7) 0%,rgba(20,16,11,.12) 30%,rgba(20,16,11,.62) 66%,rgba(20,16,11,.94) 88%,var(--negro) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 45%,transparent 30%,rgba(20,16,11,.5) 100%);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em;
+  color:var(--ambar);margin-bottom:16px;
+  animation:sube .9s .1s var(--ease) both;
+}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--ambar);opacity:.7}
+.hero h1{
+  font-size:clamp(2.8rem,9.4vw,8.4rem);
+  font-weight:800;text-transform:uppercase;color:var(--crema);
+  animation:sube 1s .22s var(--ease) both;
+}
+.hero h1 .l2{display:block;color:var(--ambar)}
+.hero-sub{
+  max-width:52ch;margin-top:22px;
+  font-size:clamp(1rem,1.5vw,1.2rem);color:var(--melocoton);
+  animation:sube 1s .38s var(--ease) both;
+}
+.hero-sub .italica{color:var(--crema)}
+.hero-botones{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;animation:sube 1s .52s var(--ease) both}
+@keyframes sube{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 25px;border-radius:999px;
+  font-weight:600;font-size:.94rem;text-decoration:none;
+  border:1.5px solid var(--crema);
+  transition:transform .2s var(--ease),background .2s,color .2s,border-color .2s;
+}
+.btn svg{width:19px;height:19px;fill:currentColor;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn-lleno{background:var(--ambar);border-color:var(--ambar);color:var(--negro)}
+.btn-lleno:hover{background:var(--ambar-claro);border-color:var(--ambar-claro)}
+.btn-borde{color:var(--crema)}
+.btn-borde:hover{background:var(--crema);color:var(--negro)}
+
+/* ============ CINTA ============ */
+.cinta{
+  background:var(--ambar);color:var(--negro);
+  overflow:hidden;white-space:nowrap;padding:11px 0;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;
+  text-transform:uppercase;font-size:.95rem;letter-spacing:.1em;
+  border-block:1px solid rgba(20,16,11,.25);
+}
+.cinta-pista{display:inline-block;animation:rueda 30s linear infinite}
+.cinta span{margin:0 20px}
+@keyframes rueda{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ SECCIONES ============ */
+section{padding:clamp(66px,9vw,116px) clamp(18px,4vw,48px);scroll-margin-top:68px}
+.contenedor{max-width:var(--max);margin-inline:auto}
+.titulo-seccion{
+  font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800;text-transform:uppercase;
+  margin-bottom:12px;color:var(--crema);
+}
+.titulo-seccion em{font-style:normal;color:var(--ambar)}
+.sub-seccion{font-size:1.02rem;max-width:46ch;margin-bottom:46px;color:var(--melocoton);opacity:.82}
+
+/* ---- Música ---- */
+#musica{background:var(--negro-2)}
+.spotify-marco{
+  border-radius:var(--radio);overflow:hidden;position:relative;
+  background:var(--negro-3);min-height:180px;
+  box-shadow:0 24px 64px rgba(0,0,0,.5);
+}
+.spotify-marco iframe{position:relative;z-index:1;border:0;display:block}
+.spotify-fallback{
+  position:absolute;inset:0;display:grid;place-content:center;gap:8px;
+  text-align:center;padding:26px;color:var(--melocoton);
+}
+.spotify-fallback b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;color:var(--crema)}
+.spotify-fallback span{font-size:.9rem;opacity:.75}
+.plataformas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.chip{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--linea);border-radius:999px;
+  padding:11px 20px;text-decoration:none;font-weight:600;font-size:.88rem;
+  color:var(--melocoton);transition:border-color .2s,color .2s,transform .2s var(--ease);
+}
+.chip svg{width:17px;height:17px;fill:currentColor;flex:none}
+.chip:hover{border-color:var(--ambar);color:var(--ambar);transform:translateY(-2px)}
+
+/* ---- En vivo: el show, en blanco y negro ---- */
+#vivo{background:var(--negro);position:relative}
+#vivo::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 45% at 50% 0%,rgba(233,138,60,.08),transparent 70%);
+}
+#vivo .contenedor{position:relative;max-width:900px}
+.vivo-grid{display:grid;grid-template-columns:370px minmax(0,1fr);gap:18px;align-items:start}
+.vivo-foto,.vivo-tira figure{
+  margin:0;overflow:hidden;cursor:zoom-in;
+  background:var(--negro-3);border:1px solid var(--linea);
+}
+.vivo-foto{border-radius:18px;aspect-ratio:4/5}
+.vivo-tira figure{border-radius:14px;aspect-ratio:16/9}
+.vivo-foto img,.vivo-tira img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--ease);
+}
+.vivo-foto:hover img,.vivo-tira figure:hover img{transform:scale(1.045)}
+.vivo-tira{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+
+/* ---- Laboratorio: carrusel de clips ---- */
+#lab{background:var(--negro);position:relative}
+#lab .contenedor{position:relative}
+.reel-caja{position:relative}
+.reel{
+  display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding-block:4px 12px;scrollbar-width:none;
+}
+.reel::-webkit-scrollbar{display:none}
+.reel-flecha{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(20,16,11,.86);border:1px solid var(--linea);
+  display:grid;place-items:center;backdrop-filter:blur(6px);
+  transition:background .2s,border-color .2s,opacity .25s;
+}
+.reel-flecha:hover{background:var(--ambar);border-color:var(--ambar)}
+.reel-flecha:hover svg{fill:var(--negro)}
+.reel-flecha svg{width:20px;height:20px;fill:var(--crema)}
+.reel-flecha[disabled]{opacity:0;pointer-events:none}
+.reel-ant{left:-12px}
+.reel-sig{right:-12px}
+.clip{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:var(--negro-3);aspect-ratio:9/16;max-width:100%;
+  border:1px solid var(--linea);
+  transition:transform .45s var(--ease),border-color .3s,box-shadow .45s var(--ease);
+  cursor:pointer;
+}
+.reel .clip{flex:0 0 clamp(210px,24vw,286px);scroll-snap-align:start}
+.clip:hover{transform:translateY(-6px);border-color:rgba(233,138,60,.5);box-shadow:0 22px 50px rgba(0,0,0,.55)}
+.clip video{width:100%;height:100%;object-fit:cover;display:block;background:var(--negro-3)}
+.clip figcaption{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:34px 16px 15px;
+  background:linear-gradient(transparent,rgba(20,16,11,.92));
+  font-size:.82rem;font-weight:600;letter-spacing:.02em;color:var(--crema);
+  pointer-events:none;
+}
+.clip-sonido{
+  position:absolute;top:12px;right:12px;z-index:3;
+  width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(20,16,11,.6);border:1px solid var(--linea);
+  backdrop-filter:blur(6px);transition:background .2s,border-color .2s;
+}
+.clip-sonido:hover{background:rgba(20,16,11,.85);border-color:var(--ambar)}
+.clip-sonido svg{width:18px;height:18px;fill:var(--crema)}
+.clip.con-sonido .clip-sonido{background:var(--ambar);border-color:var(--ambar)}
+.clip.con-sonido .clip-sonido svg{fill:var(--negro)}
+.clip-play{
+  position:absolute;inset:0;z-index:2;display:none;place-items:center;
+  background:rgba(20,16,11,.35);
+}
+.clip.pausado .clip-play{display:grid}
+.clip-play span{
+  width:62px;height:62px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ambar);box-shadow:0 8px 28px rgba(0,0,0,.45);
+}
+.clip-play svg{width:24px;height:24px;fill:var(--negro);margin-left:3px}
+.reel-nota{margin-top:24px;font-size:.84rem;opacity:.6;text-align:center}
+
+/* ---- Galería: vive dentro de Sobre mí ---- */
+#fotos{scroll-margin-top:68px}
+.galeria-cab{margin-top:clamp(56px,7vw,92px);margin-bottom:26px}
+.eyebrow-oscuro{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.76rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em;
+  color:var(--ambar);margin-bottom:12px;
+}
+.eyebrow-oscuro::before{content:'';width:34px;height:1px;background:var(--ambar);opacity:.8}
+.galeria-titulo{
+  font-size:clamp(1.55rem,3.4vw,2.4rem);font-weight:800;
+  text-transform:uppercase;color:var(--tinta);line-height:1;letter-spacing:-.02em;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+}
+.galeria-titulo em{font-style:normal;color:var(--ambar)}
+.galeria{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.galeria figure{
+  position:relative;overflow:hidden;border-radius:var(--radio);
+  background:#e3dccd;margin:0;cursor:zoom-in;
+}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.galeria figure:hover img{transform:scale(1.05)}
+.galeria figure::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(transparent 55%,rgba(34,26,17,.5));
+  opacity:0;transition:opacity .35s;
+}
+.galeria figure:hover::after{opacity:1}
+.g-a{grid-column:span 7;aspect-ratio:4/5}
+.g-b{grid-column:span 5;aspect-ratio:2/3}
+.g-c{grid-column:span 5;aspect-ratio:3/4}
+.g-d{grid-column:span 7;aspect-ratio:3/2}
+.g-e{grid-column:span 4;aspect-ratio:2/3}
+.g-f{grid-column:span 6;aspect-ratio:4/5}
+.g-f img{object-position:center 38%}
+
+/* ---- Sobre mí ---- */
+#sobre{background:var(--crema);color:var(--tinta)}
+.sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,66px);align-items:center}
+.sobre-foto{border-radius:var(--radio);box-shadow:14px 14px 0 var(--ambar)}
+#sobre .titulo-seccion{color:var(--tinta);margin-bottom:22px}
+.sobre-texto p{margin-bottom:17px;font-size:1.04rem;max-width:56ch}
+.sobre-texto .destaque{
+  font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.25rem,2.3vw,1.65rem);line-height:1.35;color:var(--tinta);
+  border-left:4px solid var(--ambar);padding-left:18px;margin:26px 0;
+}
+
+/* ---- Contacto ---- */
+#contacto{background:var(--negro);text-align:center}
+#contacto p{max-width:44ch;margin:0 auto 32px;opacity:.82}
+.sociales{display:flex;gap:16px;justify-content:center;margin-top:42px;flex-wrap:wrap}
+.social{
+  width:52px;height:52px;border-radius:50%;border:1px solid var(--linea);
+  display:inline-grid;place-items:center;
+  transition:border-color .2s,transform .2s var(--ease),background .2s;
+}
+.social svg{width:21px;height:21px;fill:var(--melocoton);transition:fill .2s}
+.social:hover{border-color:var(--ambar);transform:translateY(-3px);background:rgba(233,138,60,.1)}
+.social:hover svg{fill:var(--ambar)}
+
+footer{
+  border-top:1px solid var(--linea);background:var(--negro);
+  padding:24px clamp(18px,4vw,48px);
+  padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-size:.8rem;opacity:.55;
+}
+
+/* ---- Lightbox ---- */
+.lightbox{
+  position:fixed;inset:0;z-index:200;display:none;
+  place-items:center;background:rgba(14,11,7,.96);
+  backdrop-filter:blur(8px);padding:clamp(16px,4vw,48px);
+}
+.lightbox[open],.lightbox.abierto{display:grid}
+.lightbox img{max-width:92vw;max-height:84svh;object-fit:contain;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-cerrar{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;width:46px;height:46px;border-radius:50%;background:rgba(248,242,230,.1);display:grid;place-items:center;border:1px solid var(--linea)}
+.lb-cerrar svg{width:20px;height:20px;fill:var(--crema)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(248,242,230,.1);display:grid;place-items:center;border:1px solid var(--linea);transition:background .2s}
+.lb-nav:hover{background:rgba(233,138,60,.3)}
+.lb-nav svg{width:20px;height:20px;fill:var(--crema)}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+.lb-pie{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-size:.85rem;color:var(--melocoton);opacity:.8;padding-inline:60px}
+
+/* ---- Revelado (estado en reposo = visible; JS añade el estado oculto) ---- */
+.js-rev .revelar{opacity:0;transform:translateY(26px)}
+.js-rev .revelar.visto{opacity:1;transform:none;transition:opacity .8s var(--ease),transform .8s var(--ease)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html,.reel{scroll-behavior:auto}
+  .js-rev .revelar{opacity:1;transform:none}
+}
+
+/* ============ MÓVIL ============ */
+@media (max-width:900px){
+  .galeria{grid-template-columns:repeat(6,1fr)}
+  .g-a{grid-column:span 6;aspect-ratio:4/5}
+  .g-b{grid-column:span 3;aspect-ratio:3/4}
+  .g-c{grid-column:span 3;aspect-ratio:3/4}
+  .g-d{grid-column:span 6;aspect-ratio:3/2}
+  .g-e{grid-column:span 2;aspect-ratio:2/3}
+  .g-f{grid-column:span 3;aspect-ratio:4/5}
+  .sobre-grid{grid-template-columns:1fr}
+  .sobre-foto{box-shadow:9px 9px 0 var(--ambar)}
+  .vivo-grid{grid-template-columns:1fr;max-width:420px;margin-inline:auto}
+}
+@media (max-width:760px){
+  .burger{display:block}
+  .nav-links{
+    position:fixed;inset:0;background:rgba(20,16,11,.98);
+    flex-direction:column;justify-content:center;gap:30px;
+    transform:translateX(100%);transition:transform .38s var(--ease);
+  }
+  .nav-links.abierto{transform:translateX(0)}
+  .nav-links a{font-size:1.28rem}
+  .hero{min-height:86svh}
+  .reel-flecha{display:none}
+  .reel .clip{flex-basis:70%}
+  .clip:hover{transform:none}
+  .vivo-foto:hover img,.vivo-tira figure:hover img{transform:none}
+  .lb-nav{width:42px;height:42px}
+}
+@media (max-width:460px){
+  .galeria{grid-template-columns:repeat(2,1fr);gap:10px}
+  .g-a,.g-d{grid-column:span 2}
+  .g-b,.g-c,.g-e,.g-f{grid-column:span 1;aspect-ratio:3/4}
+  .reel .clip{flex-basis:78%}
+  .vivo-tira{grid-template-columns:1fr;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="progreso" id="progreso" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a class="logo" href="#">El <span>Científico</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+    <i></i><i></i><i></i>
+  </button>
+  <ul class="nav-links" id="menu">
+    <li><a href="#vivo">En vivo</a></li>
+    <li><a href="#musica">Música</a></li>
+    <li><a href="#lab">Laboratorio</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a class="nav-cta" href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg">
+    <img src="img/hero-escenario.jpg" alt="El Científico con su banda en vivo, bajo luces azules de escenario" fetchpriority="high" width="2200" height="2112">
+  </div>
+  <p class="hero-eyebrow">R&amp;B · Soul · Pop Rock</p>
+  <h1>El<span class="l2">Científico</span></h1>
+  <p class="hero-sub">Música para días <span class="italica">felices</span> y noches <span class="italica">tristes</span>. Artista y productor dominicano desde Nueva York.</p>
+  <div class="hero-botones">
+    <a class="btn btn-lleno" href="https://open.spotify.com/artist/75YcF0LInIr3efnp6hydDy" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.47-1 .25-2.8-1.7-6.3-2.1-10.44-1.15-.4.1-.8-.16-.9-.55-.1-.4.16-.8.56-.9 4.53-1.03 8.4-.58 11.53 1.33.36.22.47.67.25 1.02zm1.47-3.26c-.27.44-.85.58-1.3.3-3.2-1.96-8.07-2.53-11.85-1.38-.5.15-1.02-.13-1.17-.62-.15-.5.13-1.02.63-1.17 4.32-1.3 9.7-.67 13.37 1.6.44.26.58.85.32 1.27zm.13-3.4C15.24 8.37 8.94 8.16 5.28 9.27c-.6.18-1.22-.16-1.4-.75-.18-.6.16-1.22.75-1.4 4.2-1.28 11.17-1.03 15.6 1.6.53.32.7 1 .4 1.54-.33.53-1.02.7-1.55.38z"/></svg>
+      Escuchar en Spotify
+    </a>
+    <a class="btn btn-borde" href="#vivo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      Ver en vivo
+    </a>
+  </div>
+</header>
+
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-pista">
+    <span>El Científico</span><span>·</span><span>R&amp;B</span><span>·</span><span>Soul</span><span>·</span><span>Pop Rock</span><span>·</span><span>NY</span><span>·</span><span>🇩🇴</span><span>·</span>
+    <span>El Científico</span><span>·</span><span>R&amp;B</span><span>·</span><span>Soul</span><span>·</span><span>Pop Rock</span><span>·</span><span>NY</span><span>·</span><span>🇩🇴</span><span>·</span>
+  </div>
+</div>
+
+<section id="vivo">
+  <div class="contenedor">
+    <h2 class="titulo-seccion revelar">En <em>vivo</em></h2>
+    <p class="sub-seccion revelar">Con la banda, en tarima. Toca el video para escucharlo.</p>
+    <div class="vivo-grid">
+      <figure class="clip revelar vivo-video" data-clip>
+        <video data-src="video/vivo-teatro.mp4" poster="img/poster-vivo-teatro.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>Teatro, con la banda</figcaption>
+      </figure>
+      <figure class="vivo-foto revelar" data-foto><img src="img/vivo-bn-tall.jpg" alt="El Científico de perfil en el escenario, con la guitarra acústica al lado" loading="lazy" width="1170" height="1463"></figure>
+    </div>
+    <div class="vivo-tira">
+        <figure class="revelar" data-foto><img src="img/vivo-bn-1.jpg" alt="El Científico y la violinista en tarima, en blanco y negro" loading="lazy"></figure>
+        <figure class="revelar" data-foto><img src="img/vivo-bn-2.jpg" alt="El Científico de perfil tocando la guitarra eléctrica en el escenario" loading="lazy"></figure>
+        <figure class="revelar" data-foto><img src="img/vivo-bn-3.jpg" alt="Primer plano de El Científico tocando en vivo" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="musica">
+  <div class="contenedor">
+    <h2 class="titulo-seccion revelar">La <em>música</em></h2>
+    <p class="sub-seccion revelar">Dale play aquí mismo, o llévatela en tu plataforma favorita.</p>
+    <div class="spotify-marco revelar">
+      <div class="spotify-fallback" aria-hidden="true">
+        <b>El Científico en Spotify</b>
+        <span>Abre el reproductor con el botón de abajo.</span>
+      </div>
+      <iframe title="El Científico en Spotify" src="https://open.spotify.com/embed/artist/75YcF0LInIr3efnp6hydDy?utm_source=generator&amp;theme=0" width="100%" height="420" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="plataformas revelar">
+      <a class="chip" href="https://open.spotify.com/artist/75YcF0LInIr3efnp6hydDy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.47-1 .25-2.8-1.7-6.3-2.1-10.44-1.15-.4.1-.8-.16-.9-.55-.1-.4.16-.8.56-.9 4.53-1.03 8.4-.58 11.53 1.33.36.22.47.67.25 1.02zm1.47-3.26c-.27.44-.85.58-1.3.3-3.2-1.96-8.07-2.53-11.85-1.38-.5.15-1.02-.13-1.17-.62-.15-.5.13-1.02.63-1.17 4.32-1.3 9.7-.67 13.37 1.6.44.26.58.85.32 1.27zm.13-3.4C15.24 8.37 8.94 8.16 5.28 9.27c-.6.18-1.22-.16-1.4-.75-.18-.6.16-1.22.75-1.4 4.2-1.28 11.17-1.03 15.6 1.6.53.32.7 1 .4 1.54-.33.53-1.02.7-1.55.38z"/></svg>
+        Spotify
+      </a>
+      <a class="chip" href="https://music.apple.com/us/artist/el-cient%C3%ADfico/1500430741" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.7 19.5c-.83 1.24-1.7 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.4c.87-1.52 2.43-2.48 4.12-2.5 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Apple Music
+      </a>
+      <a class="chip" href="https://www.youtube.com/@elcientificodo" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2c-.28-1.04-1.1-1.86-2.13-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.37.51C1.6 4.34.78 5.16.5 6.2 0 8.07 0 12 0 12s0 3.93.5 5.8c.28 1.04 1.1 1.86 2.13 2.14 1.87.51 9.37.51 9.37.51s7.5 0 9.37-.51c1.03-.28 1.85-1.1 2.13-2.14.5-1.87.5-5.8.5-5.8s0-3.93-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+        YouTube
+      </a>
+      <a class="chip" href="https://www.tiktok.com/@elcientifico.do" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 1 1-2.31-2.84v-3.5a6.37 6.37 0 1 0 5.76 6.34V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.12z"/></svg>
+        TikTok
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="contenedor">
+    <h2 class="titulo-seccion revelar">Desde el <em>laboratorio</em></h2>
+    <p class="sub-seccion revelar">Donde se cocinan las canciones: el estudio, el cuarto, y a veces el baño. Toca para escuchar.</p>
+    <div class="reel-caja">
+      <button class="reel-flecha reel-ant" id="reelAnt" type="button" aria-label="Clips anteriores">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <div class="reel" id="reel">
+      <figure class="clip revelar" data-clip>
+        <video data-src="video/lab-cover.mp4" poster="img/poster-lab-cover.jpg" muted loop playsinline preload="none" width="576" height="1024"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>Cover en español</figcaption>
+      </figure>
+      <figure class="clip revelar" data-clip>
+        <video data-src="video/lab-estudio.mp4" poster="img/poster-lab-estudio.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>En el estudio</figcaption>
+      </figure>
+      <figure class="clip revelar" data-clip>
+        <video data-src="video/lab-voz.mp4" poster="img/poster-lab-voz.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>Grabando la voz</figcaption>
+      </figure>
+      <figure class="clip revelar" data-clip>
+        <video data-src="video/reel-agua.mp4" poster="img/poster-reel-agua.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>Esperando que se caliente el agua</figcaption>
+      </figure>
+      <figure class="clip revelar" data-clip>
+        <video data-src="video/reel-cuarto.mp4" poster="img/poster-reel-cuarto.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>En el cuarto</figcaption>
+      </figure>
+      <figure class="clip revelar" data-clip>
+        <video data-src="video/reel-acustico.mp4" poster="img/poster-reel-acustico.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+        <button class="clip-sonido" type="button" aria-label="Activar sonido"><svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z" opacity=".35"/><path d="M4.34 2.93 2.93 4.34 7.6 9H3v6h4l5 5v-6.59l4.18 4.18a6.96 6.96 0 0 1-2.18 1.11v2.06a9 9 0 0 0 3.63-1.75l2.43 2.43 1.41-1.41L4.34 2.93zM12 4 9.91 6.09 12 8.18V4z"/></svg><svg class="ico-son" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></button>
+        <div class="clip-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <figcaption>Ensayo</figcaption>
+      </figure>
+      </div>
+      <button class="reel-flecha reel-sig" id="reelSig" type="button" aria-label="Más clips">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+    <p class="reel-nota revelar">Más videos en <a href="https://www.instagram.com/elcientificodo/" target="_blank" rel="noopener" style="color:var(--ambar)">Instagram</a> y <a href="https://www.youtube.com/@elcientificodo" target="_blank" rel="noopener" style="color:var(--ambar)">YouTube</a>.</p>
+  </div>
+</section>
+
+
+<section id="sobre">
+  <div class="contenedor">
+   <div class="sobre-grid">
+    <img class="sobre-foto revelar" src="img/sala.jpg" alt="El Científico recostado en un sofá en casa" loading="lazy" width="1067" height="1600">
+    <div class="sobre-texto revelar">
+      <h2 class="titulo-seccion">Sobre mí</h2>
+      <p>Soy El Científico — artista y productor dominicano radicado en Nueva York. Escribo, produzco y toco mi propia música, mezclando R&amp;B, soul y pop rock en canciones que se sienten tan bien un viernes en la noche como un domingo en la mañana.</p>
+      <p class="destaque">"Hago música feliz que te puede hacer llorar, y música triste que te hace bailar."</p>
+      <p>Cuando no estoy en el estudio, estoy en tarima con la banda o buscando el próximo sonido. Todo lo que escuchas sale de un laboratorio: el mío.</p>
+    </div>
+   </div>
+    <div id="fotos">
+    <div class="galeria-cab revelar">
+      <p class="eyebrow-oscuro">Galería</p>
+      <h3 class="galeria-titulo">Del escenario a la <em>calle</em></h3>
+    </div>
+  <div class="galeria" id="galeria">
+      <figure data-foto class="g-a revelar"><img src="img/cafe-acustico.jpg" alt="El Científico tocando guitarra eléctrica sentado en un taburete, en un café" loading="lazy" width="1360" height="1700"></figure>
+      <figure data-foto class="g-b revelar"><img src="img/calle-guitarra.jpg" alt="El Científico con una guitarra acústica en una acera de Nueva York" loading="lazy" width="1067" height="1600"></figure>
+      <figure data-foto class="g-c revelar"><img src="img/escenario-ambar.jpg" alt="El Científico en el escenario bajo luces ámbar y faroles de papel" loading="lazy" width="1350" height="1800"></figure>
+      <figure data-foto class="g-d revelar"><img src="img/retrato-cap.jpg" alt="Retrato de El Científico con gorra negra" loading="lazy" width="1600" height="1067"></figure>
+      <figure data-foto class="g-f revelar"><img src="img/lespaul.jpg" alt="El Científico tocando una Les Paul verde" loading="lazy" width="1067" height="1600"></figure>
+      <figure data-foto class="g-f revelar"><img src="img/bici.jpg" alt="El Científico en bicicleta un día de verano" loading="lazy" width="1066" height="1600"></figure>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="contenedor">
+    <h2 class="titulo-seccion revelar">Hablemos <em>·</em> Booking</h2>
+    <p class="revelar">Para colaboraciones, booking y prensa, escríbeme directo por Instagram.</p>
+    <a class="btn btn-lleno revelar" href="https://www.instagram.com/elcientificodo/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.15A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+      @elcientificodo
+    </a>
+    <div class="sociales revelar">
+      <a class="social" href="https://www.instagram.com/elcientificodo/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.15A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+      </a>
+      <a class="social" href="https://www.tiktok.com/@elcientifico.do" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 1 1-2.31-2.84v-3.5a6.37 6.37 0 1 0 5.76 6.34V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.12z"/></svg>
+      </a>
+      <a class="social" href="https://www.youtube.com/@elcientificodo" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2c-.28-1.04-1.1-1.86-2.13-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.37.51C1.6 4.34.78 5.16.5 6.2 0 8.07 0 12 0 12s0 3.93.5 5.8c.28 1.04 1.1 1.86 2.13 2.14 1.87.51 9.37.51 9.37.51s7.5 0 9.37-.51c1.03-.28 1.85-1.1 2.13-2.14.5-1.87.5-5.8.5-5.8s0-3.93-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+      </a>
+      <a class="social" href="https://open.spotify.com/artist/75YcF0LInIr3efnp6hydDy" target="_blank" rel="noopener" aria-label="Spotify">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.47-1 .25-2.8-1.7-6.3-2.1-10.44-1.15-.4.1-.8-.16-.9-.55-.1-.4.16-.8.56-.9 4.53-1.03 8.4-.58 11.53 1.33.36.22.47.67.25 1.02zm1.47-3.26c-.27.44-.85.58-1.3.3-3.2-1.96-8.07-2.53-11.85-1.38-.5.15-1.02-.13-1.17-.62-.15-.5.13-1.02.63-1.17 4.32-1.3 9.7-.67 13.37 1.6.44.26.58.85.32 1.27zm.13-3.4C15.24 8.37 8.94 8.16 5.28 9.27c-.6.18-1.22-.16-1.4-.75-.18-.6.16-1.22.75-1.4 4.2-1.28 11.17-1.03 15.6 1.6.53.32.7 1 .4 1.54-.33.53-1.02.7-1.55.38z"/></svg>
+      </a>
+      <a class="social" href="https://music.apple.com/us/artist/el-cient%C3%ADfico/1500430741" target="_blank" rel="noopener" aria-label="Apple Music">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.7 19.5c-.83 1.24-1.7 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.4c.87-1.52 2.43-2.48 4.12-2.5 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 El Científico. Todos los derechos reservados.</span>
+  <span>elcientificodo.com</span>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lb-cerrar" id="lbCerrar" type="button" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Foto siguiente">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <p class="lb-pie" id="lbPie"></p>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Nav sólido + barra de progreso ---- */
+  var nav = document.getElementById('nav');
+  var progreso = document.getElementById('progreso');
+  function alScroll(){
+    nav.classList.toggle('solido', window.scrollY > 60);
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    progreso.style.transform = 'scaleX(' + (alto > 0 ? Math.min(window.scrollY / alto, 1) : 0) + ')';
+  }
+  addEventListener('scroll', alScroll, {passive:true});
+  addEventListener('resize', alScroll, {passive:true});
+  alScroll();
+
+  /* ---- Menú móvil ---- */
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){
+    var abierto = menu.classList.toggle('abierto');
+    burger.setAttribute('aria-expanded', String(abierto));
+    burger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('abierto');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Abrir menú');
+    });
+  });
+
+  /* ---- Revelado al hacer scroll (reposo = visible; solo oculta si hay soporte) ---- */
+  if ('IntersectionObserver' in window && !reduce) {
+    document.documentElement.classList.add('js-rev');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); }
+      });
+    }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.revelar').forEach(function(el){ io.observe(el); });
+    // Red de seguridad: si algo no se revela, mostrarlo igual.
+    setTimeout(function(){
+      document.querySelectorAll('.revelar:not(.visto)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < innerHeight) el.classList.add('visto');
+      });
+    }, 1600);
+  }
+
+  /* ---- Reel de video ---- */
+  var clips = Array.prototype.slice.call(document.querySelectorAll('[data-clip]'));
+  clips.forEach(function(clip){
+    var video = clip.querySelector('video');
+    var boton = clip.querySelector('.clip-sonido');
+    var icoMute = clip.querySelector('.ico-mute');
+    var icoSon  = clip.querySelector('.ico-son');
+
+    function pintar(){
+      var son = !video.muted;
+      clip.classList.toggle('con-sonido', son);
+      icoMute.hidden = son; icoSon.hidden = !son;
+      boton.setAttribute('aria-label', son ? 'Silenciar' : 'Activar sonido');
+    }
+    // El archivo sólo se descarga cuando el clip se acerca a la pantalla.
+    function cargar(){
+      if (video.dataset.src) { video.src = video.dataset.src; delete video.dataset.src; }
+    }
+    function intentarPlay(){
+      cargar();
+      var p = video.play();
+      if (p && p.catch) p.catch(function(){ clip.classList.add('pausado'); });
+    }
+    function alternarSonido(){
+      if (video.muted) {
+        clips.forEach(function(otro){                       // solo un clip con sonido
+          if (otro !== clip) {
+            var v = otro.querySelector('video');
+            v.muted = true;
+            otro.classList.remove('con-sonido');
+            otro.querySelector('.ico-mute').hidden = false;
+            otro.querySelector('.ico-son').hidden = true;
+            otro.querySelector('.clip-sonido').setAttribute('aria-label','Activar sonido');
+          }
+        });
+        video.muted = false;
+        clip.classList.remove('pausado');
+        intentarPlay();
+      } else {
+        video.muted = true;
+      }
+      pintar();
+    }
+
+    boton.addEventListener('click', function(ev){ ev.stopPropagation(); alternarSonido(); });
+    clip.addEventListener('click', alternarSonido);
+    video.addEventListener('playing', function(){ clip.classList.remove('pausado'); });
+    pintar();
+
+    if (!('IntersectionObserver' in window)) { cargar(); clip.classList.add('pausado'); return; }
+
+    // Precarga anticipada: empieza a bajar el video antes de que entre en cuadro.
+    new IntersectionObserver(function(es, obs){
+      if (es[0].isIntersecting) { cargar(); obs.disconnect(); }
+    }, {rootMargin:'700px 0px'}).observe(clip);
+
+    if (reduce) { clip.classList.add('pausado'); return; }
+
+    {
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if (e.isIntersecting) intentarPlay();
+          else { video.pause(); if (!video.muted) { video.muted = true; pintar(); } }
+        });
+      }, {threshold:.55}).observe(clip);
+    }
+  });
+
+  /* ---- Flechas del carrusel ---- */
+  var reel = document.getElementById('reel');
+  var ant  = document.getElementById('reelAnt');
+  var sig  = document.getElementById('reelSig');
+  if (reel && ant && sig) {
+    var paso = function(){
+      var c = reel.querySelector('.clip');
+      return (c ? c.offsetWidth + 16 : 260) * 2;
+    };
+    var estado = function(){
+      var max = reel.scrollWidth - reel.clientWidth - 2;
+      ant.disabled = reel.scrollLeft <= 2;
+      sig.disabled = reel.scrollLeft >= max;
+    };
+    ant.addEventListener('click', function(){ reel.scrollBy({left:-paso(), behavior:'smooth'}); });
+    sig.addEventListener('click', function(){ reel.scrollBy({left: paso(), behavior:'smooth'}); });
+    reel.addEventListener('scroll', estado, {passive:true});
+    addEventListener('resize', estado, {passive:true});
+    estado();
+  }
+
+  /* ---- Lightbox ---- */
+  var figuras = Array.prototype.slice.call(document.querySelectorAll('[data-foto]'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbPie = document.getElementById('lbPie');
+  var indice = 0, ultimoFoco = null;
+
+  function mostrar(i){
+    indice = (i + figuras.length) % figuras.length;
+    var img = figuras[indice].querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbPie.textContent = img.alt + '  ·  ' + (indice + 1) + '/' + figuras.length;
+  }
+  function abrir(i){
+    ultimoFoco = document.activeElement;
+    mostrar(i);
+    lb.classList.add('abierto');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lbCerrar').focus();
+  }
+  function cerrar(){
+    lb.classList.remove('abierto');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+    if (ultimoFoco) ultimoFoco.focus();
+  }
+  figuras.forEach(function(f, i){
+    f.setAttribute('tabindex','0');
+    f.setAttribute('role','button');
+    f.setAttribute('aria-label','Ampliar foto');
+    f.addEventListener('click', function(){ abrir(i); });
+    f.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(i); }
+    });
+  });
+  document.getElementById('lbCerrar').addEventListener('click', cerrar);
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); mostrar(indice - 1); });
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); mostrar(indice + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb || e.target === lbImg) cerrar(); });
+  addEventListener('keydown', function(e){
+    if (!lb.classList.contains('abierto')) return;
+    if (e.key === 'Escape') cerrar();
+    else if (e.key === 'ArrowLeft') mostrar(indice - 1);
+    else if (e.key === 'ArrowRight') mostrar(indice + 1);
+  });
+  // Deslizar en móvil
+  var x0 = null;
+  lb.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) mostrar(indice + (dx < 0 ? 1 : -1));
+    x0 = null;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
